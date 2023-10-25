@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mallinja</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+        body {
+            max-width: 80vw;
+            margin: 0 auto;
+            margin-top: 20px;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .topContainer {
+            display: grid;
+            grid-template-columns: repeat(2, 130px);
+            gap: 10px;
+        }
+
+        .logo {
+            width: 130px;
+            margin-top: 5px;
+        }
+
+        .title h1, p {
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .journeyPlanner {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .SearchInputContainer {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .SearchInputContainer input {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+            position: relative;
+        }
+
+        .SearchInputContainer input:focus + .Search-list {
+            display: block;
+            position: absolute;
+            margin-top: 40px;
+        }
+
+        .SearchInputContainer input:placeholder-shown + .Search-list {
+            display: none;
+        }
+
+        .Search-list {
+            max-height: 150px;
+            overflow-y: auto;
+            display: none;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 8px;
+            width: 200px;
+        }
+
+        .Search-list div {
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .Search-list div:hover {
+            background-color: #f0f0f0;
+        }
+        
+        #map{
+            border: 5px solid #F7007A;
+            border-radius: 20px;
+        }
+        @media (max-width: 768px) {
+            .journeyPlanner{
+                text-align: center;
+                margin-top: 50px;
+            }
+            .SearchInputContainer{
+                text-align: center;
+                display: block;
+            }
+            #map{
+                margin-top: 50px !important;
+                height: 320px !important;
+            }   
+        }
+    </style>
+</head>
+<body>
+    <div class="topContainer">
+        <img class="logo" src="static/mallinjaLogo.png" />
+        <div class="title">
+            <h1>Mallinja</h1>
+            <p>The better Tallinja</p>
+        </div>
+    </div>
+    <h2 class="journeyPlanner">Journey Planner</h2>
+        <div class="SearchInputContainer">
+            <input type="text" id="SearchDestinationInput" placeholder="Search for a bus destination" data-id="">
+            <div id="SearchDestinationList" class="Search-list"></div>
+        </div>
+    <div id="map" style="height: 400px; margin-top: 180px"></div>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="scripts/api.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+
+//main_page ?:
+https://api2.meep.me/tripplan/api/v1/routers/malta_tallinja/
+
+//stops (id, jmeno, lokace, zona)
+https://api2.meep.me/tripplan/api/v1/routers/malta_tallinja/index/stops/
+
+//routes (id, shortname)
+https://api2.meep.me/tripplan/api/v1/routers/malta_tallinja/index/routes/
+
+//patterns?
+https://api2.meep.me/tripplan/api/v1/routers/malta_tallinja/index/patterns/{id_bus_route}::01
+
+id_bus_route => https://api2.meep.me/tripplan/api/v1/routers/malta_tallinja/index/routes/
+
+example:
+
+https://api2.meep.me/tripplan/api/v1/routers/malta_tallinja/index/patterns/1089:9130001::01
+
+//?
+
+https://api2.meep.me/tripplan/api/v1/routers/malta_tallinja/index/stops/{id_bus_stop}/routes
+
+id_bus_stop => https://api2.meep.me/tripplan/api/v1/routers/malta_tallinja/index/stops/
+
+example (kulleg):
+can be used to find what buses stop at specific busstop
+https://api2.meep.me/tripplan/api/v1/routers/malta_tallinja/index/stops/1089:7968/routes
+
+
+https://api2.meep.me/tripplan/api/v1/routers/malta_tallinja/resources
+https://api2.meep.me/tripplan/api/v1/routers/malta_tallinja/index/stops/1089:9576/stoptimes
+
+https://api2.meep.me/tripmanager/api/v1/company-zone/zone/malta_tallinja/filter
+https://api2.meep.me/common/api/v1/config/ios-tallinja
